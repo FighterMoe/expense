@@ -1,0 +1,45 @@
+.form-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.control {
+  margin: 8px 0;
+  flex-basis: 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.control label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.control input {
+  flex: 1;
+  font-size: 1.25rem;
+  padding: 6px 10px;
+  border: none;
+  outline: none;
+}
+
+.control-btn {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.control-btn button {
+  padding: 8px 12px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.125rem;
+  letter-spacing: 0.01rem;
+  border-radius: 8px;
+  border: 1px solid #fff;
+  background-color: #110202;
+  cursor: pointer;
+}

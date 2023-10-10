@@ -1,4 +1,6 @@
 .new-expense {
-  padding: 25px 12px;
+  max-width: 80%;
+  padding: 12px;
+  margin: 25px auto;
   background-color: #a1059a;
 }

@@ -1,0 +1,51 @@
+.expense-item {
+  margin: 12px 0;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  background-color: #746e6e;
+}
+
+.expense-item__description {
+  flex: 1;
+  padding-left: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.expense-item__title {
+  flex: 1;
+  text-transform: capitalize;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.01rem;
+}
+
+.expense-item__amount {
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  background-color: #6b0666;
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+
+.expense-item__date {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 6px 18px;
+  background-color: #000;
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+
+.expense-item__month,
+.expense-item__day {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.expense-item__year {
+  font-size: .75rem;
+}

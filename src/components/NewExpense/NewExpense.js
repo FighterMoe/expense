@@ -1,10 +1,22 @@
+import React from "react"
 import "./NewExpense.css";
 import Card from "../UI/Card/Card";
+import ExpenseForm from "./ExpenseForm/ExpenseForm";
 
-const NewExpense = () => {
+const NewExpense = (props) => {
+
+  const addExpenseHandler = expense => {
+    const newExpense = {
+      id: Math.random().toString(),
+      ...expense
+    }
+    
+    props.onAddNewExpense(newExpense)
+  }
+
   return (
     <Card className="new-expense">
-      <h2>new expense form will play here.</h2>
+      <ExpenseForm onAddExpense={addExpenseHandler} />
     </Card>
   );
 }
