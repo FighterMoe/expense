@@ -1,9 +1,10 @@
 import React from "react"
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
   return (
     <div>
-      <h2>Wellcome React Dev.</h2>
+      <NewExpense />
     </div>
   );
 }
