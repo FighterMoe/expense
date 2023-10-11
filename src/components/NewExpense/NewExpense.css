@@ -4,3 +4,19 @@
   margin: 25px auto;
   background-color: #a1059a;
 }
+
+.new-expense__btn-container {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 8px 0 0;
+}
+.new-expense__btn {
+  padding: 6px 12px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #000;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}

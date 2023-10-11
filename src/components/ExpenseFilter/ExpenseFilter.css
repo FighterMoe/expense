@@ -1,0 +1,16 @@
+.expense-filter {
+  display: flex;
+  padding: 8px 12px 0;
+  flex-direction: row-reverse;
+  max-width: 80%;
+  margin: 0 auto;
+  background-color: #000;
+  border-radius: 12px 12px 0 0;
+}
+
+.expense-filter__select {
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+}

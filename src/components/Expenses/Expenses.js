@@ -1,12 +1,12 @@
 import React from "react"
-import Card from "../UI/Card/Card"
+// import Card from "../UI/Card/Card"
 import "./Expenses.css"
 import ExpenseItem from "./ExpenseItem/ExpenseItem"
 
 const Expenses = (props) => {
   let expenses = <p>No Expense found.</p>
 
-  if(props.expenses) {
+  if(props.expenses.length !== 0) {
     expenses = props.expenses.map(expense => {
       return <ExpenseItem 
         key={expense.id}
@@ -17,9 +17,9 @@ const Expenses = (props) => {
   }
 
   return (
-    <Card className="expenses">
+    <div className="expenses">
       {expenses}
-    </Card>
+    </div>
   )
 }
 

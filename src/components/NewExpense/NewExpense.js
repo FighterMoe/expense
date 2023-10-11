@@ -14,9 +14,21 @@ const NewExpense = (props) => {
     props.onAddNewExpense(newExpense)
   }
 
+  let expenseForm = (<div className="new-expense__btn-container">
+                      <button 
+                        onClick={props.onShowForm} 
+                        className="new-expense__btn">
+                          Expeses Form
+                      </button>
+                    </div>)
+
+  if(props.doesFormShow) {
+    expenseForm = <ExpenseForm onAddExpense={addExpenseHandler} onCloseForm={props.onShowForm} />
+  }
+
   return (
     <Card className="new-expense">
-      <ExpenseForm onAddExpense={addExpenseHandler} />
+      {expenseForm}
     </Card>
   );
 }

@@ -24,6 +24,8 @@ const ExpenseForm = (props) => {
     setTitle("")
     setAmount("")
     setDate("")
+
+    props.onCloseForm()
   }
 
   return (
