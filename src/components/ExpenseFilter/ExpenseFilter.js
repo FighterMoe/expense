@@ -2,14 +2,14 @@ import React from "react"
 import "./ExpenseFilter.css"
 
 const ExpenseFilter = props => {
+
   const selectHandler = event => {
-    const selectedValue = Number(event.target.value);
-    props.onFilter(selectedValue)
+    props.onFilter(event.target.value)
   }
 
   return (
     <div className="expense-filter">
-      <select className="expense-filter__select" onChange={selectHandler}>
+      <select className="expense-filter__select" value={props.selectedYear} onChange={selectHandler}>
         <option value="2019">2019</option>
         <option value="2020">2020</option>
         <option value="2021">2021</option>

@@ -2,10 +2,12 @@ import React, {useState} from "react"
 import NewExpense from "./components/NewExpense/NewExpense"
 import Expenses from "./components/Expenses/Expenses"
 import ExpenseFilter from "./components/ExpenseFilter/ExpenseFilter"
+import ExpenseChart from "./components/Expenses/ExpenseChart/ExpenseChart"
 
 
 const App = () => {
   const [isFormShow, setIsFormShow] = useState(false)
+  const [selectedYear, setSelectedYear] = useState("2019")
   
   const [expenses, setExpenses] = useState([
     {
@@ -28,11 +30,36 @@ const App = () => {
     },
 
     {
-      id: "e2",
+      id: "e4",
       title: "house",
       amount: 500,
-      date: new Date("2022-5-28")
+      date: new Date("2023-1-28")
     },
+
+    {
+      id: "e5",
+      title: "how to win",
+      amount: 800,
+      date: new Date("2023-2-16")
+    },
+    {
+      id: "e6",
+      title: "house",
+      amount: 600,
+      date: new Date("2023-6-12")
+    },
+    {
+      id: "e7",
+      title: "house",
+      amount: 120,
+      date: new Date("2022-8-12")
+    },
+    {
+      id: "e8",
+      title: "house",
+      amount: 220,
+      date: new Date("2022-5-8")
+    }
   ])
 
   const addExpenseHandler = expense => {
@@ -47,15 +74,13 @@ const App = () => {
     setIsFormShow(!isFormShow)
   }
 
-  const [filteredExpenses, setFilteredExpenses] = useState([])
-
-  const expenseFilterHandler = (selectedYear) => {
-    const filtered = expenses.filter(expense => {
-      return expense.date.getFullYear() === selectedYear
-    })
-    
-    setFilteredExpenses([...filtered])
+  const yearSelectorHandler = (selectedYear) => {
+    setSelectedYear(selectedYear)
   }
+
+  const filteredExpenses = expenses.filter( expense => {
+    return expense.date.getFullYear().toString() === selectedYear
+  })
 
   return (
     <div>
@@ -65,7 +90,9 @@ const App = () => {
         onShowForm={showExpenseFormHandler}
       />
 
-      <ExpenseFilter onFilter={expenseFilterHandler} />
+      <ExpenseChart expenses={filteredExpenses} />
+
+      <ExpenseFilter onFilter={yearSelectorHandler} selectedYear={selectedYear} />
 
       <Expenses expenses={filteredExpenses} />
     </div>
